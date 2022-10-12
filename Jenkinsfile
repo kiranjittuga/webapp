@@ -21,27 +21,9 @@ pipeline {
       }
     } 
     
-    stage ('OWASP Dependency-Check Vulnerabilities') {
-            steps {
-                dependencyCheck additionalArguments: ''' 
-                    -o "./" 
-                    -s "./"
-                    -f "ALL" 
-                    --prettyPrint''', odcInstallation: 'OWASP-DC'
-
-                dependencyCheckPublisher pattern: 'dependency-check-report.xml'
-            }
-    }
+  
     
-    stage ('SAST') {
-      steps {
-        withSonarQubeEnv('Sonar') {
-          sh 'mvn sonar:sonar'
-          sh 'cat target/sonar/report-task.txt'
-        }
-      }
-    } 
-    
+   
    
     stage ('Build') {
       steps {
@@ -49,6 +31,7 @@ pipeline {
       }
       
     }
+	  
         stage ('Upload Reports to Defect Dojo') {
 		    steps {
 			sh 'pip install requests'
