@@ -14,7 +14,7 @@ def upload_results(host, user, api_key, scanner, result_file, engagement_id, ver
 	files = dict()
 
 	# Prepare headers
-	# headers = {'Authorization': 'ApiKey dojo:3e24a3ee5af0305af20a5e6224052de3ed2f6859'}
+	# headers = {'Authorization': 'ApiKey dojo:1cfb69d0577faa22a07f810444cd3bdf41ac8fe4'}
 	headers['Authorization'] = AUTH_TOKEN
 	print headers
 
@@ -25,7 +25,7 @@ def upload_results(host, user, api_key, scanner, result_file, engagement_id, ver
 	#   "verified": False,
 	#   "tags": "",
 	#   "active": False,
-	#   "engagement": "/api/v1/engagements/2/",
+	#   "engagement": "/api/v1/engagements/1/",
 	#   "lead":"/api/v1/users/1/",
 	#   "scan_type": "Bandit Scan"
 	# }
