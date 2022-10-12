@@ -37,7 +37,7 @@ pipeline {
 			sh 'pip install requests'
 			sh 'wget https://raw.githubusercontent.com/kiranjittuga/webapp/master/upload-results.py'
 			sh 'chmod +x upload-results.py'
-      sh 'python upload-results.py --host 3.81.3.77:80 --api_key 66879c160803596f132aff025fee9a170366f615 --engagement_id 4 --result_file trufflehog --username admin --scanner "SSL Labs Scan"'    
+      sh 'python upload-results.py --host 127.0.0.1:8000 --api_key 1cfb69d0577faa22a07f810444cd3bdf41ac8fe4 --engagement_id 1 --result_file trufflehog --username admin --scanner "SSL Labs Scan"'    
       
         }
      }    
