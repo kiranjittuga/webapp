@@ -37,8 +37,8 @@ pipeline {
 			sh 'pip install requests'
 			sh 'wget https://raw.githubusercontent.com/kiranjittuga/webapp/master/upload-results.py'
 			sh 'chmod +x upload-results.py'
-      sh 'python3 upload-results.py --host 127.0.0.1:8000 --api_key 1cfb69d0577faa22a07f810444cd3bdf41ac8fe4 --engagement_id 1 --result_file trufflehog --username admin --scanner "SSL Labs Scan"'    
-      
+      sh 'python3 dojo_ci_cd.py --product=1 --file "/tests/scans/Bodgeit-burp.xml" --scanner="Burp Scan" --high=0 --host=http://localhost:8000 --api_key=<api_key> --user=admin'  
+       
         }
      }    
   }
