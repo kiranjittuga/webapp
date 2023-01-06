@@ -31,16 +31,7 @@ pipeline {
       }
       
     }
-	  
-        stage ('Upload Reports to Defect Dojo') {
-		    steps {
-			sh 'pip install requests'
-			sh 'wget https://raw.githubusercontent.com/kiranjittuga/webapp/master/dojo_ci_cd.py'
-			sh 'chmod +x dojo_ci_cd.py'
-      sh 'python3 dojo_ci_cd.py --product=1 --file "/var/lib/jenkins/workspace/Webapp/trufflehog.xml" --scanner="trufflehog Scan" --high=0 --host=http://localhost:8000 --api_key=<1222c567c6b54b30ef9d6f8a2f867e2a3f850406> --user=admin'  
-       
-        }
-     }    
+	
   }
 } 
     
